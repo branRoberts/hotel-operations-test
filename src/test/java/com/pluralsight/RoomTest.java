@@ -21,11 +21,23 @@ class RoomTest {
         assertTrue(room.isDirty());
     }
     @Test
-    void checkOut_() {}
+    void checkOut_RoomIsOccupied_RoomIsEmpty() {
+
+        Room room = new Room(1,92.0);
+
+        room.checkout();
+
+        assertFalse(room.isOccupied());
+    }
 
     @Test
-    void cleamRoom_(){
+    void cleanRoom_RoomIsNotOccupied_RoomIsNotDirty(){
 
+        Room room = new Room(1,92.0);
+
+        room.cleanRoom();
+
+        assertFalse(room.isOccupied());
     }
 
 }
